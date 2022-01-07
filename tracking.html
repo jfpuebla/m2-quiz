@@ -1,0 +1,36 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Calorie Tracker</h1>
+            <form  id="form-screen" action="tracking.html" >
+            <fieldset>
+                <b><label for='foodName'>Food Name</label></b>
+                <input type="text" id='food-input' name='foodName' required>
+            </fieldset>
+
+            <fieldset>
+                <b><label for='calorieCount'>Amount of Calories</label></b>
+                <input type="number" id='calories-input' name='calorieCount' required>
+            </fieldset>
+
+            </form>
+
+            <div class='calorie-total'>
+                <h3>Total Calories:</h3>
+                <h3 id='calorie-left'>0</h3>
+            </div>
+
+        </div>
+
+        <div class="form-submit-button">
+            <button type="submit" form="form-screen" value="Submit" id='screen-btn'>Submit</button>
+        </div>
+
+    </body>
+    <script src="js-tracking.js"></script>
+
+
+</html>
