@@ -1,13 +1,15 @@
   
 const submitBtn=document.getElementById('submit-btn');
 
+
 submitBtn.onclick=function (){
+
     var ageValue=document.getElementById('age-input').value;
     var weightValue=document.getElementById('weight-input').value;
     var heightValue=document.getElementById('height-input').value;
     var genderValue=document.querySelector('input[name="radio-button"]:checked').value;
-    var activity = document.getElementById("list");
-    var activityValue = activity.options[activity.selectedIndex].value;
+
+
 
     var bmr=findBMR(ageValue,weightValue,heightValue,genderValue);
     console.log(bmr);
@@ -15,8 +17,9 @@ submitBtn.onclick=function (){
     //uses the activity method
     var finalBMR=findActivityBMR(bmr);
     console.log(finalBMR);
-
-
+    
+    let lastBMR=setCookie('bmr',finalBMR,1);
+ 
 }
 //finds the bmr
 function findBMR(ageValue,weightValue,heightValue,genderValue){
@@ -33,6 +36,8 @@ function findBMR(ageValue,weightValue,heightValue,genderValue){
 //activity multiplies the bmr
 function findActivityBMR(bmr){
     var finalBMR;
+    var activity = document.getElementById("list");
+    var activityValue = activity.options[activity.selectedIndex].value;
 
     if(activityValue=='1'){
         finalBMR=1.2*bmr;
@@ -45,8 +50,14 @@ function findActivityBMR(bmr){
     }else if(activityValue=='5'){
         finalBMR=1.9*bmr;
     }
+
     return finalBMR;
 }
 
-var calorieTotal=document.getElementById('calorie-left');
-calorieTotal.innerHTML=finalBMR;
+function setCookie(name,value,exp_days) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exp_days*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
