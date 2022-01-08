@@ -1,3 +1,10 @@
+body{    
+    background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 fieldset{
     margin-top: 1%;
     margin-bottom: 1%;
@@ -14,17 +21,7 @@ h1{
     font-weight: 700;
     letter-spacing: 1.4px;
 }
-
-body{
-    background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.flex-container{
+.container{
     display:flex;
     flex-direction:column;
     background-color:#ffffff;
@@ -32,9 +29,6 @@ body{
     height: 95%;
     justify-content: center;
     align-items: center;
-    /* border-style: solid;
-    border-color: #fca311;
-    border-width: 15px; */
 }
 
 input{
@@ -60,7 +54,7 @@ input:focus {
     border-bottom-color: #ddd;
   }
 
-#submit-btn{
+#screen-btn{
     background: none;
     border: none;
     color: #ea1d6f;
@@ -71,4 +65,9 @@ input:focus {
     font-weight: 700;
     letter-spacing: 1.4px;
 }
-
+.calorie-total{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    font-size:20px;
+}
